@@ -8,6 +8,10 @@ LibraryDataTools::Application.load_tasks
 desc "seed database"
 namespace :db do
   task :seed do
-    require './db/seed/load_aadl.rb'
+    if ARGV[1]
+      require './db/seed/load_aadl.rb'
+    else
+      puts "please specify csv file ( eg: ./db/seed/aadl_holds_small.csv )"
+    end
   end
 end

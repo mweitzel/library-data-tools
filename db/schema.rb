@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109212330) do
+ActiveRecord::Schema.define(version: 20131109223958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,5 +26,14 @@ ActiveRecord::Schema.define(version: 20131109212330) do
     t.string  "branch_code"
     t.string  "cancel_status"
   end
+
+  add_index "holds", ["bib_record"], name: "index_holds_on_bib_record", using: :btree
+  add_index "holds", ["branch_code"], name: "index_holds_on_branch_code", using: :btree
+  add_index "holds", ["cancel_status"], name: "index_holds_on_cancel_status", using: :btree
+  add_index "holds", ["copies"], name: "index_holds_on_copies", using: :btree
+  add_index "holds", ["fulfillment_date"], name: "index_holds_on_fulfillment_date", using: :btree
+  add_index "holds", ["material_code"], name: "index_holds_on_material_code", using: :btree
+  add_index "holds", ["request_date"], name: "index_holds_on_request_date", using: :btree
+  add_index "holds", ["user_hash"], name: "index_holds_on_user_hash", using: :btree
 
 end

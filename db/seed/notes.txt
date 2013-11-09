@@ -1,5 +1,11 @@
 Notes on aadl_fulfillment.csv
 
+Download database seed files at:
+https://s3.amazonaws.com/slush_bucket/aadl_holds_tiny.csv
+https://s3.amazonaws.com/slush_bucket/aadl_holds_small.csv
+https://s3.amazonaws.com/slush_bucket/aadl_holds.csv
+
+
 AADL Fulfillment Stats Table Dump
 as of Tuesday 9/24/2013
 Containing 4 Million Holds Fulfilled since March 2010

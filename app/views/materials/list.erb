@@ -1,0 +1,9 @@
+<div class='pure-u-1-5'></div>
+<div class='pure-u-3-5'>
+  <div class='pure-g list'>
+    <% @materials.each do |material|%>
+      <%= render "listing", material: material %>
+    <% end %>
+  </div>
+</div>
+<div class='pure-u-1-5'></div>

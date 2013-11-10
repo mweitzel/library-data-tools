@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109223958) do
+ActiveRecord::Schema.define(version: 20131110004613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,5 +35,17 @@ ActiveRecord::Schema.define(version: 20131109223958) do
   add_index "holds", ["material_code"], name: "index_holds_on_material_code", using: :btree
   add_index "holds", ["request_date"], name: "index_holds_on_request_date", using: :btree
   add_index "holds", ["user_hash"], name: "index_holds_on_user_hash", using: :btree
+
+  create_table "materials", force: true do |t|
+    t.integer "bib_record"
+    t.string  "material_code"
+    t.integer "copies"
+    t.integer "number_of_open_holds"
+  end
+
+  add_index "materials", ["bib_record"], name: "index_materials_on_bib_record", using: :btree
+  add_index "materials", ["copies"], name: "index_materials_on_copies", using: :btree
+  add_index "materials", ["material_code"], name: "index_materials_on_material_code", using: :btree
+  add_index "materials", ["number_of_open_holds"], name: "index_materials_on_number_of_open_holds", using: :btree
 
 end

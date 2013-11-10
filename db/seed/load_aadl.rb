@@ -18,3 +18,7 @@ CSV.foreach(ARGV[1]) do |row|
     end
   end
 end
+
+p "seeding materials from open holds"
+Material.seed_materials_from_holds
+p "done!"

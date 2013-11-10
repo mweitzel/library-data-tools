@@ -41,6 +41,9 @@
       <div class='pure-u-1' id='users'><%= @users %></div>
       <script>
         users = JSON.parse(document.getElementById("users").innerText)
+        document.getElementById("users").innerText = JSON.stringify(_.sortBy(users, function(user){
+          return -user.number_of_holds
+        }))
       </script>
     </div>
   </div>

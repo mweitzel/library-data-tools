@@ -9,7 +9,7 @@ class MaterialsController < ApplicationController
     holders = Hold.select(:user_hash).current_open.where( bib_record: params[:id] )
     @users = []
     holders.each do |holder|
-      @users << { user_hash: holder.user_hash }
+      @users << { number_of_holds: 0, user_hash: holder.user_hash }
     end
     @users.each do |user|
       user[:number_of_holds] = Hold.current_open.where( user_hash: user[:user_hash] ).count

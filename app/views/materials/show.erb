@@ -2,7 +2,9 @@
 <div class='pure-u-3-5'>
   <div class='pure-g'>
     <div class='pure-u-1-5'>
-      <%= render "listing", material: @material %>
+      <a class="pure-u-1-5 listing" href=<%="http://www.aadl.org/catalog/record/#{@material.bib_record}"%>>
+        <img src=<%="http://media.aadl.org/covers/#{@material.bib_record}_100.jpg"%>>
+      </a>
     </div>
     <div class='pure-u-4-5'>
       <div class='pure-g'>

@@ -13,3 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(window).ready(function(e){
+//  markMenuItemAsSelected()
+});
+
+$(window).on('hashchange', function(e){
+//  markMenuItemAsSelected()
+});
+

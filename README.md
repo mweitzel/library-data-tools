@@ -18,3 +18,7 @@ Designed as an internally hosted tool.
 * Database seeding: download a seed file () `$ rake db:seed ./path/to/seed_data.csv`
 
 * `rails s` to run
+
+-----
+
+If your library is using the [whatewer the name of the system is], the following instructions are for exporting an appropriate csv.

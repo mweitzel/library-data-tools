@@ -11,7 +11,7 @@ namespace :db do
     if ARGV[1]
       require './db/seed/load_aadl.rb'
     else
-      puts "please specify csv file ( eg: ./db/seed/aadl_holds_small.csv )"
+      puts "please specify csv file ( eg: ./db/seed/aadl_holds_tail.csv )"
     end
   end
 end

@@ -16,4 +16,7 @@ class MaterialsController < ApplicationController
     end
     @users = @users.to_json
   end
+
+  def options
+  end
 end

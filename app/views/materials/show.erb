@@ -7,47 +7,14 @@
       </a>
     </div>
     <div class='pure-u-4-5'>
-      <div class='pure-g'>
-        <div class='pure-u-1-5 right breathe-child'>
-          <div class="breathe">
-            <%= "biblio record:" %>
-          </div>
-          <div>
-            <%= "material type:" %>
-          </div>
-          <div>
-            <%= "number copies:" %>
-          </div>
-          <div>
-            <%= "current holds:" %>
-          </div>
-        </div>
-
-        <div class='pure-u-1-5 left breathe-child' >
-          <div>
-            <%= "#{@material.bib_record}" %>
-          </div>
-          <div>
-            <%= "#{@material.material_code}" %>
-          </div>
-          <div>
-            <%= "#{@material.copies}" %>
-          </div>
-          <div>
-            <%= "#{@material.number_of_open_holds}" %>
-          </div>
-        </div>
+      <div>
+        <%= render "table_from_array_of_hashes", array: [{asdf:1234, qwer:3456}] %>
       </div>
     </div>
-    <div class="pure-g">
-      <div class='pure-u-1' id='users'><%= @users %></div>
-      <script>
-        users = JSON.parse(document.getElementById("users").innerText)
-        document.getElementById("users").innerText = JSON.stringify(_.sortBy(users, function(user){
-          return -user.number_of_holds
-        }))
-      </script>
-    </div>
+    <div class="pure-u-1">
+      <h4>Holders</h4>
+      <%= render "table_from_array_of_hashes", array: @users %>
+    <div>
   </div>
 </div>
 <div class='pure-u-1-5'></div>

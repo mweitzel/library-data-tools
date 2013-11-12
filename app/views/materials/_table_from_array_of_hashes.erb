@@ -1,0 +1,22 @@
+<table class="pure-table">
+  <thead>
+    <tr>
+      <% array.first.keys.each do |name| %>
+        <th>
+          <%= name.to_s.gsub("_", " ").to_s[0..15] %>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% array.each do |hash| %>
+      <tr>
+        <% hash.values.each do |data_point| %>
+          <td>
+            <%= data_point.to_s[0..15] %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

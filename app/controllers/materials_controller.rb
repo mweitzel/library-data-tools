@@ -14,7 +14,6 @@ class MaterialsController < ApplicationController
     @users.each do |user|
       user[:number_of_holds] = Hold.current_open.where( user_hash: user[:user_hash] ).count
     end
-    @users = @users.to_json
   end
 
   def options

@@ -15,10 +15,18 @@
 //= require_tree .
 
 $(window).ready(function(e){
-//  markMenuItemAsSelected()
+  markMenuItemAsSelected()
 });
 
 $(window).on('hashchange', function(e){
-//  markMenuItemAsSelected()
+  markMenuItemAsSelected()
 });
 
+function markMenuItemAsSelected(){
+  $(".pure-menu-selected").removeClass("pure-menu-selected")
+  $(classFromHash()).addClass("pure-menu-selected")
+}
+
+function classFromHash(){
+  return window.location.hash.split("#").join(".")
+}

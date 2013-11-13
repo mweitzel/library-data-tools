@@ -15,4 +15,7 @@ class Material < ActiveRecord::Base
                                          copies: hold.copies )
     end
   end
+  def to_hash
+    {bib_record:self.bib_record,current_holds:self.number_of_open_holds}
+  end
 end

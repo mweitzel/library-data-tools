@@ -8,12 +8,12 @@
     </div>
     <div class='pure-u-4-5'>
       <div>
-        <%= render "table_from_array_of_hashes", array: [{asdf:1234, qwer:3456}] %>
+        <%= render "table_from_array_of_hashes", array: [@material.to_hash] %>
       </div>
     </div>
     <div class="pure-u-1">
       <h4>Holders</h4>
-      <%= render "table_from_array_of_hashes", array: @users %>
+      <%= render "table_from_array_of_hashes", array: @users.sort_by {|a| -a[:number_of_holds]} %>
     <div>
   </div>
 </div>
